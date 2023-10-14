@@ -2,6 +2,12 @@ document.title = "project-js-7";
 let input = document.getElementById("input");
 let button = document.getElementById("button");
 let parent = document.getElementById("shape");
+window.onload = function () {
+        input.focus();
+}
+input.onblur = function () {
+        button.focus();
+}
 input.style.cssText = `
 padding: 0.8em;
 border-radius: 3px;
@@ -24,12 +30,12 @@ max-width: 20em;
 text-align: center;
 `;
 button.onclick = function (params) {
-        let text  = document.createElement("div")
+        let text  = document.createElement("div");
         text.innerHTML = `<span>${input.value}</span>`;
         text.style.cssText = ` 
         margin: 10px;
         border-top: 1px solid #eee;
         padding: 10px;
         `;
-        parent.appendChild(text)
+        parent.appendChild(text);
 }
